@@ -25,45 +25,44 @@ def search(values, search_for):
     return None
 
 
-def get_slope_score(trajectory_score):
+def get_slope_score(slope_score):
     """
 
-    :param trajectory_score:
+    :param slope_score:
     :return:
     """
-
-    slope_score = {
+    slope_score_map = {
 
         25: (0.01, 0.25),
         50: (0.26, 0.50),
         75: (0.51, 0.75),
-        100: (0.75,100000)
+        100: (0.75, 100000)
     }
 
-    return search(slope_score, trajectory_score)
+    return search(slope_score_map, slope_score)
 
 
-def simple_linear_regression(X, y):
+def simple_linear_regression(input_x, y):
     """
     Returns slope and intercept for a simple regression line
 
     inputs- Works best with numpy arrays, though other similar data structures will work fine.
-        X - input data
+        input_x - input data
         y - output data
 
-    :param X:
+    :param input_x:
     :param y:
     :return: floats
     """
 
     # initial sums
-    n = float(len(X))
+    n = float(len(input_x))
 
-    sum_x = X.sum()
+    sum_x = input_x.sum()
     sum_y = y.sum()
 
-    sum_xy = (X * y).sum()
-    sum_xx = (X ** 2).sum()
+    sum_xy = (input_x * y).sum()
+    sum_xx = (input_x ** 2).sum()
 
     # formula for w0
     slope = (sum_xy - (sum_x * sum_y) / n) / (sum_xx - (sum_x * sum_x) / n)
@@ -71,15 +70,13 @@ def simple_linear_regression(X, y):
     # formula for w1
     intercept = sum_y / n - slope * (sum_x / n)
 
-    return (intercept, slope)
+    return intercept, slope
 
 
 def trajectory_score(known_y, known_x):
     """
-    :param data:
-    :param db:
-    :param config_name:
-    :param config:
+    :param known_y:
+    :param known_x:
     :return:
     """
 
@@ -97,6 +94,6 @@ def trajectory_score(known_y, known_x):
 
     print slope
 
-    t_score = round(slope, 2)
+    slope_score = round(slope, 2)
 
-    return get_slope_score(t_score)
+    return get_slope_score(slope_score)
