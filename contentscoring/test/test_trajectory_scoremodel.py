@@ -1,20 +1,16 @@
 import mongomock
-
 import nose.tools as nose_tools
 
-from contentscoring.scoresubmodel import completion_score
 from contentscoring.scoresubmodel import trajectory_score
-from contentscoring.scoresubmodel import recency_score
-from contentscoring.scoresubmodel import volume_score
 
-from contentscoring.test.test_records import trajectory_1year_xrange, trajectory_1year_yrange
-from contentscoring.test.test_records import trajectory_6month_score_xrange, trajectory_6month_score_yrange
-from contentscoring.test.test_records import trajectory_3month_score_xrange, trajectory_3month_score_yrange
-from contentscoring.test.test_records import trajectory_1month_score_xrange, trajectory_1month_score_yrange
+from contentscoring.test.test_records_trajectory import trajectory_1year_xrange, trajectory_1year_yrange
+from contentscoring.test.test_records_trajectory import trajectory_6month_score_xrange, trajectory_6month_score_yrange
+from contentscoring.test.test_records_trajectory import trajectory_3month_score_xrange, trajectory_3month_score_yrange
+from contentscoring.test.test_records_trajectory import trajectory_1month_score_xrange, trajectory_1month_score_yrange
 
 
-## Initialize pre-test mongomock
-sm_db = mongomock.MongoClient().db
+# Initialize pre-test mongomock
+# sm_db = mongomock.MongoClient().db
 
 
 def test_trajectory_1year_score():
