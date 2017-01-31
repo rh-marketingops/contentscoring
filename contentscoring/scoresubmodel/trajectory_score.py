@@ -6,6 +6,14 @@ import numpy as np
 from scipy import stats
 
 
+SLOPE_SCORE_MAP = {
+    25: (0.01, 0.25),
+    50: (0.26, 0.50),
+    75: (0.51, 0.75),
+    100: (0.75, 100000)
+}
+
+
 def search(values, search_for):
     """
 
@@ -31,15 +39,8 @@ def get_slope_score(slope_score):
     :param slope_score:
     :return:
     """
-    slope_score_map = {
 
-        25: (0.01, 0.25),
-        50: (0.26, 0.50),
-        75: (0.51, 0.75),
-        100: (0.75, 100000)
-    }
-
-    return search(slope_score_map, slope_score)
+    return search(SLOPE_SCORE_MAP, slope_score)
 
 
 def simple_linear_regression(input_x, y):
