@@ -43,6 +43,8 @@ def get_slope_score(slope_score):
     return search(SLOPE_SCORE_MAP, slope_score)
 
 
+# TODO: Need to clear manual slope calculation if python scipy stats.linregress works as expected
+'''
 def simple_linear_regression(input_x, y):
     """
     Returns slope and intercept for a simple regression line
@@ -72,6 +74,7 @@ def simple_linear_regression(input_x, y):
     intercept = sum_y / n - slope * (sum_x / n)
 
     return intercept, slope
+'''
 
 
 def trajectory_score(known_y, known_x):
@@ -84,6 +87,7 @@ def trajectory_score(known_y, known_x):
     x = np.array(known_x)
     y = np.array(known_y)
 
+    # If date and visit array content single record then return 0 score
     if 1 in (len(x), len(y)):
         return 0
 
@@ -93,8 +97,7 @@ def trajectory_score(known_y, known_x):
     # scipy stats linregress
     slope, intercept, r_value, p_value, std_err = stats.linregress(y, x)
 
-    print slope
-
+    #print slope
     slope_score = round(slope, 2)
 
     return get_slope_score(slope_score)
