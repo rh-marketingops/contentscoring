@@ -1,12 +1,36 @@
 
-recency_month_date_range = (42715, 42722, 42729, 42736)
-recency_month_date_visit_range = (4, 9, 5, 5)
+recency_month_high_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_month_high_score_date_visit_range = (5, 5, 5, 5)
 
-recency_3month_date_range = (42715, 42722, 42729, 42736)
-recency_3month_date_visit_range = (15, 31, 14, 6)
+recency_month_low_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_month_low_score_date_visit_range = (0, 0, 0, 0)
 
-recency_6month_date_range = (42715, 42722, 42729, 42736)
-recency_6month_date_visit_range = (70, 34, 245, 70)
+recency_month_random_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_month_random_score_date_visit_range = (4, 9, 5, 5)
 
-recency_year_date_range = (42715, 42722, 42729, 42736)
-recency_year_visit_range = (40, 4, 25, 700)
+recency_3month_high_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_3month_high_score_date_visit_range = (15, 15, 15, 15)
+
+recency_3month_low_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_3month_low_score_date_visit_range = (0, 0, 0, 0)
+
+recency_3month_random_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_3month_random_score_date_visit_range = (15, 31, 14, 6)
+
+recency_6month_high_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_6month_high_score_date_visit_range = (30, 30, 30, 30)
+
+recency_6month_low_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_6month_low_score_date_visit_range = (0, 0, 0, 0)
+
+recency_6month_random_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_6month_random_date_visit_range = (17, 24, 245, 77)
+
+recency_year_high_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_year_high_score_date_visit_range = (65, 65, 65, 65)
+
+recency_year_low_score_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_year_low_score_date_visit_range = (0, 0, 0, 0)
+
+recency_year_random_date_range = ('range_4', 'range_3', 'range_3', 'range_1')
+recency_year_random_date_visit_range = (70, 94, 295, 7)
