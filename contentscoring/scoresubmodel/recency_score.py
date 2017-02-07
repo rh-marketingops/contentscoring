@@ -1,5 +1,5 @@
 """
-
+This is recency sub score model
 """
 
 RECENCY_SCORE_MAP = {
@@ -57,6 +57,7 @@ def recency_score(date_range, visit_range, base_divisor, time_range):
     else if time_range == 13 then
         divisor = base_divisor * time_range i.e 5 * 13 == 65
     '''
+
     divisor = time_range * base_divisor
 
     # zip data with weeks
