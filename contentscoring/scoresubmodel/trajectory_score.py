@@ -1,5 +1,5 @@
 """
-
+This is trajectory sub score model
 """
 
 import numpy as np
