@@ -1,3 +1,7 @@
+# pylint: disable=C0103
+"""
+Sub model completion score test record sets.
+"""
 
 completion_month_high_score_file_download = 100
 completion_month_high_score_web_visit = 100

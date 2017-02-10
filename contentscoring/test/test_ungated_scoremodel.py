@@ -1,28 +1,65 @@
-import mongomock
-import nose.tools as nose_tools
+# pylint: disable=C0103
+"""
+score model ungated test record sets.
+"""
 
-from contentscoring.scoresubmodel import trajectory_score
-from contentscoring.test import test_records_trajectory as t_rec
+# import mongomock
+# import nose.tools as nose_tools
+
+from contentscoring.scoremodel import ungated_score
+from contentscoring.test import test_records_ungatedscore as t_rec
 
 # Initialize pre-test mongomock
 # sm_db = mongomock.MongoClient().db
 
 
-def test_trajectory_1year_score():
-    score_out = trajectory_score(t_rec.trajectory_1year_yrange, t_rec.trajectory_1year_xrange)
-    assert score_out == 100
+def test_ungated_1month_score():
+    """
+
+    :return:
+    """
+
+    ungated_score_out = ungated_score(t_rec.ungated_month_score_record_1)
+
+    score_out = (ungated_score_out + (t_rec.ungated_month_score_record_1['vol_score'] * 0.10))
+
+    assert score_out == 82
 
 
-def test_trajectory_6month_score():
-    score_out = trajectory_score(t_rec.trajectory_1month_score_xrange, t_rec.trajectory_6month_score_xrange)
-    assert score_out == 0
-    
-    
-def test_trajectory_3month_score():
-    score_out = trajectory_score(t_rec.trajectory_3month_score_yrange, t_rec.trajectory_3month_score_xrange)
-    assert score_out == 0
+def test_ungated_3month_score():
+    """
+
+    :return:
+    """
+
+    ungated_score_out = ungated_score(t_rec.ungated_3month_score_record_1)
+
+    score_out = (ungated_score_out + (t_rec.ungated_3month_score_record_1['vol_score'] * 0.10))
+
+    assert score_out == 82
 
 
-def test_trajectory_1month_score():
-    score_out = trajectory_score(t_rec.trajectory_1month_score_yrange, t_rec.trajectory_1month_score_xrange)
-    assert score_out == 0
+def test_ungated_6month_score():
+    """
+
+    :return:
+    """
+
+    ungated_score_out = ungated_score(t_rec.ungated_6month_score_record_1)
+
+    score_out = (ungated_score_out + (t_rec.ungated_6month_score_record_1['vol_score'] * 0.10))
+
+    assert score_out == 82
+
+
+def test_ungated_year_score():
+    """
+
+    :return:
+    """
+
+    ungated_score_out = ungated_score(t_rec.ungated_year_score_record_1)
+
+    score_out = (ungated_score_out + (t_rec.ungated_year_score_record_1['vol_score'] * 0.10))
+
+    assert score_out == 82
