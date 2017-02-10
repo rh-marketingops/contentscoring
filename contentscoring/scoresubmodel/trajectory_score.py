@@ -84,20 +84,24 @@ def trajectory_score(known_y, known_x):
     :return:
     """
 
-    x = np.array(known_x)
-    y = np.array(known_y)
+    x_range_value = np.array(known_x)
+    y_range_value = np.array(known_y)
 
     # If date and visit array content single record then return 0 score
-    if 1 in (len(x), len(y)):
+    if 1 in (len(x_range_value), len(y_range_value)):
         return 0
 
     # Manual calculation
     # intercept, slope = simple_linear_regression(y, x)
 
     # scipy stats linregress
-    slope, intercept, r_value, p_value, std_err = stats.linregress(y, x)
+    slope, intercept, r_value, p_value, std_err = stats.linregress(y_range_value, x_range_value)
+
+    print('slope: {0}, intercept: {1}, r_value: {2}, p_value: {3}, std_err: {4}'.format(
+        slope, intercept, r_value, p_value, std_err))
 
     #print slope
     slope_score = round(slope, 2)
 
     return get_slope_score(slope_score)
+

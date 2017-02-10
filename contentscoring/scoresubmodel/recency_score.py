@@ -45,7 +45,7 @@ def recency_score(date_range, visit_range, base_divisor, time_range):
 
     aggregated_score_by_week = []
 
-    '''
+    """
     Calculate divisor Here are the criteria
 
     if time_range is 1 then
@@ -56,7 +56,7 @@ def recency_score(date_range, visit_range, base_divisor, time_range):
         divisor = base_divisor * time_range i.e 5 * 6 == 30
     else if time_range == 13 then
         divisor = base_divisor * time_range i.e 5 * 13 == 65
-    '''
+    """
 
     divisor = time_range * base_divisor
 

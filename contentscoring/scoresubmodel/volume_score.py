@@ -1,3 +1,11 @@
+"""
+This is volum sub score model
+"""
 
-def volume_score(data, db, config_name='', config={}):
-    pass
+def volume_score():
+    """
+
+    :return:
+    """
+
+    return 0
